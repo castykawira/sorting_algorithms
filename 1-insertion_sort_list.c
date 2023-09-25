@@ -13,7 +13,7 @@ void insertion_sort_list(listint_t **list)
 		return;
 
 	key_node = (*list);
-		current_node = (*list)->next;
+	current_node = (*list)->next;
 
 	while (current_node)
 	{
@@ -21,12 +21,10 @@ void insertion_sort_list(listint_t **list)
 
 		while (key_node && current_node->n < key_node->n)
 		{
-			key_node->prev->next = key_node->next;
-
 			if (key_node->prev)
 				key_node->prev->next = current_node;
 			else
-				*list = key_node;
+				*list = current_node;
 			if (current_node->next)
 				current_node->next->prev = key_node;
 			tmp = current_node->next;
