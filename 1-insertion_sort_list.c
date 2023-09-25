@@ -7,35 +7,38 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current_node, *key_node;
+	listint_t *current_node, *key_node, *new_node, *tmp;
 
 	if (!list || !(*list) || !((*list)->next))
 		return;
 
-	current_node = (*list)->next;
+	key_node = (*list);
+		current_node = (*list)->next;
 
 	while (current_node)
 	{
-		key_node = current_node;
-		current_node = current_node->next;
+		new_node = current_node->next;
 
-		while (key_node->prev && key_node->n < key_node->prev->n)
+		while (key_node && current_node->n < key_node->n)
 		{
 			key_node->prev->next = key_node->next;
 
-			if (key_node->next)
-				key_node->next->prev = key_node->prev;
-
-			key_node->next = key_node->prev;
-			key_node->prev = key_node->prev->prev;
-
 			if (key_node->prev)
-				key_node->prev->next = key_node;
+				key_node->prev->next = current_node;
 			else
 				*list = key_node;
-
-			key_node->next->prev = key_node;
+			if (current_node->next)
+				current_node->next->prev = key_node;
+			tmp = current_node->next;
+			current_node->next = key_node;
+			current_node->prev = key_node->prev;
+			key_node->next = tmp;
+			key_node->prev = current_node;
 			print_list(*list);
+			key_node = current_node->prev;
 		}
+		current_node = new_node;
+		if (current_node)
+			key_node = current_node->prev;
 	}
 }
