@@ -17,7 +17,7 @@ void swap_int(int *a, int *b)
 
 /**
  * shell_sort - Implements the shell sort algorithm sorting
- * 		an array of integers in ascending order
+ *		an array of integers in ascending order
  * @array: The array of integers to sort
  * @n: Size of the array
  */
