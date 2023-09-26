@@ -24,5 +24,7 @@ void print_list(const listint_t *list);
 void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t n);
 void swap_int(int *a, int *b);
-
+int lomuto_partition(int *array, int low, int high, size_t size);
+void quicksort(int *array, int low, int high, size_t size);
+void quick_sort(int *array, size_t size);
 #endif /* SORT_H */
