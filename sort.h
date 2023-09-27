@@ -31,5 +31,9 @@ void swap_ahead(listint_t **head, listint_t **tail, listint_t **shaker);
 int lomuto_partition(int *array, int low, int high, size_t size);
 void quicksort(int *array, int low, int high, size_t size);
 void quick_sort(int *array, size_t size);
+int max_get(int size, int *array);
+void counting_sort(int *array, size_t size);
+void radix_sort(int *array, size_t size);
+void radix_counting_sort(int *array, size_t size, int dig, int *buf);
 
 #endif /* SORT_H */
