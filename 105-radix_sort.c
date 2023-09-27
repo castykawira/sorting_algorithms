@@ -58,15 +58,13 @@ void radix_sort(int *array, size_t size)
 	free(buf);
 }
 
-#include "sort.h"
-
 /**
- *  * max_get - Function that gets the maximum value i an array of integers
- *   * @array: The array
- *    * @size: The size of the array to sort
- *     *
- *      * Return: The maximum integer in the array
- *       */
+ * max_get - Function that gets the maximum value i an array of integers
+ * @array: The array
+ * @size: The size of the array to sort
+ *
+ * Return: The maximum integer in the array
+ */
 
 int max_get(int size, int *array)
 {
